@@ -2,14 +2,14 @@ var parse5 = require('parse5');
 var flatten = require('lodash.flatten');
 var React = require('react');
 var uuid = require('uuid').v4;
-var {EventEmitter} = require('fbemitter');
+var fbemitter = require('fbemitter');
 
 const isBrowser = !!(document && window);
 
 var totalNumber = 0;
 var loadNumber = 0;
 var toLoadSrc = [];
-var emitter = new EventEmitter();
+var emitter = new fbemitter.EventEmitter();
 
 emitter.addListener('loaded', () => {
   loadNumber++;
