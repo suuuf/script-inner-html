@@ -14,7 +14,10 @@
     "inner"
   ],
   "main": "index.js",
-  "repository": "imbugs/script-inner-html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imbugs/script-inner-html.git"
+  },
   "dependencies": {
     "lodash.flatten": "^4.4.0",
     "parse5": "^2.2.3",
@@ -23,5 +26,14 @@
   },
   "peerDependencies": {
     "react": "*"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/imbugs/script-inner-html/issues"
+  },
+  "homepage": "https://github.com/imbugs/script-inner-html#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "imbugs",
+  "license": "MIT"
 }
