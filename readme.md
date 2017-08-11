@@ -1,6 +1,6 @@
 # script-inner-html
 
-`dangerouslySetInnerHTML` that evaluates `<script>` tags, improve `dangerously-set-inner-html `
+`dangerouslySetInnerHTML` that evaluates `<script>` tags, improve `dangerously-set-inner-html `, add `<script src="">` support
 
 ## install
 
