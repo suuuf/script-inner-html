@@ -1,23 +1,23 @@
-# dangerously-set-inner-html
+# script-inner-html
 
 `dangerouslySetInnerHTML` that evaluates `<script>` tags
 
 ## install
 
 ```
-npm install --save dangerously-set-inner-html
+npm install --save script-inner-html
 ```
 
 ## usage
 
 ```js
 const React = require('react');
-const InnerHTML = require('dangerously-set-inner-html')
+const InnerHTML = require('script-inner-html')
 
 const html = `
   <div id="root"></div>
   <script>
-    window.alert('hello from dangerously-set-inner-html');
+    window.alert('hello from script-inner-html');
   </script>
 `
 
