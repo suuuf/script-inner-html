@@ -11,7 +11,7 @@ var loadNumber = 0;
 var toLoadSrc = [];
 var emitter = new fbemitter.EventEmitter();
 
-emitter.addListener('loaded', () => {
+emitter.addListener('loaded', function () {
   loadNumber++;
   onLoaded();
 });
@@ -19,7 +19,7 @@ emitter.addListener('loaded', () => {
 var onLoaded = function (src) {
   src && toLoadSrc.push(src);
   if (loadNumber >= totalNumber) {
-    toLoadSrc.map((s) => {
+    toLoadSrc.map(function (s) {
       loadText(s);
     })
     toLoadSrc = [];
@@ -45,18 +45,20 @@ var loadText = function (src) {
 }
 
 
-var findScritps = (node) => {
+var findScritps = function (node) {
   if (node.tagName && node.tagName === 'script') {
     if (node.childNodes && node.childNodes.length > 0) {
-      return (node.childNodes || []).map((n) => n.value);
+      return (node.childNodes || []).map(function (n) {
+        return n.value
+      });
     } else {
-      var srcs = (node.attrs || []).map((n) => {
+      var srcs = (node.attrs || []).map(function (n) {
         if (n['name'] == 'src') {
           return n.value;
         }
       });
 
-      var fns = (srcs || []).map((n) => {
+      var fns = (srcs || []).map(function (n) {
         n && loadSrc(n);
       })
     }
@@ -67,10 +69,8 @@ var findScritps = (node) => {
 
 var run = function () {
   const scripts = ((this.state || {}).scripts || []);
-  var fns = scripts.map((src) => {
-    if (src) {
-      onLoaded(src);
-    }
+  var fns = scripts.map(function (src) {
+    src && onLoaded(src);
   })
 };
 

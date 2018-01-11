@@ -23,7 +23,7 @@ const html = `
 
 module.exports = () => {
   return (
-    <InnerHTML html={html) />
+    <InnerHTML html={html} />
   );
 };
 ```
