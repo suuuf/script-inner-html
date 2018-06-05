@@ -45,7 +45,7 @@ var loadText = function (src) {
 }
 
 
-var findScritps = function (node) {
+var findScripts = function (node) {
   if (node.tagName && node.tagName === 'script') {
     if (node.childNodes && node.childNodes.length > 0) {
       return (node.childNodes || []).map(function (n) {
@@ -64,7 +64,7 @@ var findScritps = function (node) {
     }
   }
 
-  return flatten((node.childNodes || []).map(findScritps));
+  return flatten((node.childNodes || []).map(findScripts));
 };
 
 var run = function () {
@@ -96,7 +96,7 @@ module.exports = React.createClass({
     if (!html || typeof html !== 'string') {
       return;
     }
-    return findScritps(parse5.parseFragment(html));
+    return findScripts(parse5.parseFragment(html));
   },
   initialState: function (props) {
     return {
