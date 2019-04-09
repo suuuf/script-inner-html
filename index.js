@@ -3,6 +3,7 @@ var flatten = require('lodash.flatten');
 var React = require('react');
 var uuid = require('uuid').v4;
 var fbemitter = require('fbemitter');
+var createReactClass = require('create-react-class');
 
 const isBrowser = !!(document && window);
 
@@ -74,7 +75,7 @@ var run = function () {
   })
 };
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   clean: function () {
     if (!this.state.id || !isBrowser) {
       return;
